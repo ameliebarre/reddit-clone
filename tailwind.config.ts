@@ -10,14 +10,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: {
+          DEFAULT: "#EA462F",
+          hover: "#962B1B",
+          active: "#872010",
+        },
       },
     },
   },
-  darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      layout: {
+        disabledOpacity: "1",
+      },
+      themes: {
+        light: {},
+        dark: {},
+      },
+    }),
+  ],
 };
 export default config;
