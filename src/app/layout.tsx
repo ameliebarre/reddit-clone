@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          {/* @ts-expect-error Server Component */}
           <Header />
           <div className="container mx-auto px-4 max-w-6xl">{children}</div>
         </Providers>
