@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`h-screen bg-gray-100 ${inter.className}`}>
         <Providers>
           <Header />
-          <div className="container mx-auto px-4 max-w-6xl">{children}</div>
+          <div className="container mx-auto">{children}</div>
         </Providers>
       </body>
     </html>

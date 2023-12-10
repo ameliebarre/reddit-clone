@@ -1,25 +1,17 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
   NavbarItem,
-  Input,
   Button,
   Avatar,
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from "@nextui-org/react";
-import { IoSearch } from "react-icons/io5";
 
 import { useSession } from "next-auth/react";
 import * as actions from "@/actions";
-import redditLogo from "public/reddit.svg";
 
 export default function HeaderAuth() {
   const session = useSession();
@@ -56,8 +48,9 @@ export default function HeaderAuth() {
             <Button
               type="submit"
               className={[
-                "border-2 border-primary hover:border-primary-hover active:border-primary-active",
-                "text-primary hover:text-primary-hover active:text-primary-active",
+                "border-2 text-primary border-primary",
+                "active:border-primary-active active:text-primary-active",
+                "group-data-[hover=true]:border-primary-hover group-data-[hover=true]:text-primary-hover",
                 "font-medium",
               ].join(" ")}
               variant="bordered"
@@ -71,7 +64,9 @@ export default function HeaderAuth() {
           <form action={actions.signIn}>
             <Button
               type="submit"
-              className="bg-primary hover:bg-primary-hover active:bg-primary-active text-white font-medium"
+              className={[
+                "bg-primary hover:bg-primary-hover active:bg-primary-active text-white font-medium",
+              ].join(" ")}
               radius="full"
             >
               Sign Up
