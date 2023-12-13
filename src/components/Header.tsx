@@ -31,11 +31,10 @@ export default function Header() {
           <Input
             type="text"
             classNames={{
-              label: "text-black/50 dark:text-white/90",
               input: [
                 "bg-transparent",
-                "text-black/90 dark:text-white/90",
-                "placeholder:text-default-700/50 dark:placeholder:text-white/60",
+                "text-black/90",
+                "placeholder:text-default-700/50",
               ],
               innerWrapper: "bg-transparent",
               inputWrapper: [

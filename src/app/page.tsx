@@ -1,7 +1,10 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import TopicCreateForm from "@/components/topics/TopicCreateForm";
+import { auth } from "@/auth";
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
   return (
     <div className="grid grid-cols-5 gap-4 mt-6">
       <div className="col-span-1">
@@ -10,9 +13,11 @@ export default function Home() {
       <div className="col-span-3">
         <h1 className="text-xl">Top posts</h1>
       </div>
-      <div>
-        <TopicCreateForm />
-      </div>
+      {session?.user ? (
+        <div>
+          <TopicCreateForm />
+        </div>
+      ) : null}
     </div>
   );
 }
